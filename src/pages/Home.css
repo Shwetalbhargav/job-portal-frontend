@@ -1,0 +1,27 @@
+/* Custom colors for the Bootstrap theme */
+.bg-brown {
+  background-color: #A17C5D !important;
+}
+
+.btn-brown {
+  background-color: #A17C5D;
+  border-color: #A17C5D;
+  transition: all 0.3s ease;
+}
+
+.btn-brown:hover {
+  background-color: rgb(77, 144, 77); 
+  border-color: rgb(9, 26, 9);
+  transform: scale(1.1); 
+}
+
+
+
+.btn-outline-brown {
+  color: #A17C5D;
+  border-color: #A17C5D;
+}
+
+.text-brown {
+  color: #A17C5D;
+}
