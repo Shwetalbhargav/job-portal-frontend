@@ -1,7 +1,8 @@
-// api.js
+
 import axios from 'axios';
 
-const BASE_URL = 'http://localhost:5000/api'; // Update if backend is hosted on a different URL
+/*const BASE_URL = 'http://localhost:5000/api';*/
+const BASE_URL = 'https://job-portal-backend-4vvg.onrender.com/api';
 
 // Configure axios instance
 const api = axios.create({
@@ -23,9 +24,13 @@ const setAuthHeader = (token) => {
 // ==================== Applicant APIs ====================
 
 // Register a new applicant
-export const registerApplicant = async (applicantData) => {
+export const registerApplicant = async (applicantData, additionalHeaders = {})  => {
     try {
-        const response = await api.post('/applicants/register', applicantData);
+        const response = await api.post('/applicants/register', applicantData,{
+            headers: {
+                ...additionalHeaders,
+            }    
+        });
         return response.data;
     } catch (error) {
         throw error.response?.data || error.message;

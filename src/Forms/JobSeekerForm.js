@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Form, Button,  Container, Row, Col, Card } from "react-bootstrap";
 import axios from "axios";
 import "bootstrap/dist/css/bootstrap.min.css";
+import { getApplicants, registerApplicant } from "../services/api";
 
 const JobSeekerForm = () => {
   const [formData, setFormData] = useState({
@@ -65,9 +66,9 @@ const JobSeekerForm = () => {
     }
 
     try {
-      const response = await axios.post("http://localhost:5000/api/applicants/register", data, {
-        headers: { "Content-Type": "multipart/form-data" }
-      });
+      const response = await registerApplicant(data,{"Content-Type": "multipart/form-data" });
+        
+      
       alert("Registration successful!");
       console.log(response.data);
     } catch (error) {
