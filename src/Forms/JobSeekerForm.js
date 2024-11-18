@@ -257,6 +257,92 @@ const JobSeekerForm = () => {
     </Row>
   </Container>
 
+  {/* New Design Section */}
+  <section className="features-section py-5 bg-dark text-light">
+        <div className="container">
+          <h2 className="mb-5 text-white">Why Choose Swissmote?</h2>
+          <div className="row">
+            <div className="col-md-4 mb-4">
+              <div className="card bg-dark text-light border-0 h-100">
+                <div className="card-body text-center">
+                  <div className="icon mb-3" style={{ fontSize: "2rem" }}>
+                    📋
+                  </div>
+                  <h5 className="card-title">Job Listings</h5>
+                  <p className="card-text">
+                    Easily create, manage, and update job listings for your
+                    organization.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div className="col-md-4 mb-4">
+              <div className="card bg-dark text-light border-0 h-100">
+                <div className="card-body text-center">
+                  <div className="icon mb-3" style={{ fontSize: "2rem" }}>
+                    👤
+                  </div>
+                  <h5 className="card-title">Candidate Management</h5>
+                  <p className="card-text">
+                    Track and manage applications with automated message
+                    responses.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div className="col-md-4 mb-4">
+              <div className="card bg-dark text-light border-0 h-100">
+                <div className="card-body text-center">
+                  <div className="icon mb-3" style={{ fontSize: "2rem" }}>
+                    📌
+                  </div>
+                  <h5 className="card-title">Automated Assignments</h5>
+                  <p className="card-text">
+                    Assign tasks and manage roles efficiently with automated
+                    workflows.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <h2 className="mb-5 text-white mt-5">What Our Users Say</h2>
+          <div className="row">
+            <div className="col-md-4 mb-4">
+              <div className="card bg-dark text-light border-0 h-100">
+                <div className="card-body text-center">
+                  <p className="card-text">
+                    "This hiring process is truly unique and efficient."
+                  </p>
+                  <h6 className="card-subtitle mt-3">- Jane Doe</h6>
+                </div>
+              </div>
+            </div>
+            <div className="col-md-4 mb-4">
+              <div className="card bg-dark text-light border-0 h-100">
+                <div className="card-body text-center">
+                  <p className="card-text">
+                    "Loved the real-world project assignment approach!"
+                  </p>
+                  <h6 className="card-subtitle mt-3">- John Smith</h6>
+                </div>
+              </div>
+            </div>
+            <div className="col-md-4 mb-4">
+              <div className="card bg-dark text-light border-0 h-100">
+                <div className="card-body text-center">
+                  <p className="card-text">
+                    "Quick, transparent, and skill-focused hiring. Highly
+                    recommend."
+                  </p>
+                  <h6 className="card-subtitle mt-3">- Emily Johnson</h6>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
   {/* Footer */}
   <footer className="footer py-3 bg-light text-dark">
         <p>Privacy Policy | Terms of Service | Contact</p>

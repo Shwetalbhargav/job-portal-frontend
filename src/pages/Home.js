@@ -63,6 +63,143 @@ const LandingPage = () => {
         </div>
       </section>
 
+
+      
+      {/* New Enhanced Section */}
+      <section
+        className="features-section py-5"
+        style={{ backgroundColor: "#A17C5D", color: "#ffffff" }} // Light brown background with white text
+      >
+        <div className="container">
+          <h2 className="mb-5">Why Choose JobPortal?</h2>
+          <div className="row">
+            {/* Card 1 */}
+            <div className="col-md-4 mb-4">
+              <div
+                className="card h-100 shadow-lg border-0"
+                style={{ backgroundColor: "#8B5E3C", color: "#ffffff" }} // Darker brown card background
+              >
+                <div className="card-body text-center">
+                  <div
+                    className="icon mb-3"
+                    style={{
+                      fontSize: "2.5rem",
+                      color: "#FFD700", // Golden yellow icon
+                    }}
+                  >
+                    📋
+                  </div>
+                  <h5 className="card-title">Effortless Job Listings</h5>
+                  <p className="card-text">
+                    Post, edit, and organize job opportunities with just a few
+                    clicks.
+                  </p>
+                </div>
+              </div>
+            </div>
+            {/* Card 2 */}
+            <div className="col-md-4 mb-4">
+              <div
+                className="card h-100 shadow-lg border-0"
+                style={{ backgroundColor: "#8B5E3C", color: "#ffffff" }}
+              >
+                <div className="card-body text-center">
+                  <div
+                    className="icon mb-3"
+                    style={{
+                      fontSize: "2.5rem",
+                      color: "#FF7F50", // Coral icon
+                    }}
+                  >
+                    👤
+                  </div>
+                  <h5 className="card-title">Streamlined Candidate Tracking</h5>
+                  <p className="card-text">
+                    Track candidates efficiently with powerful automated tools.
+                  </p>
+                </div>
+              </div>
+            </div>
+            {/* Card 3 */}
+            <div className="col-md-4 mb-4">
+              <div
+                className="card h-100 shadow-lg border-0"
+                style={{ backgroundColor: "#8B5E3C", color: "#ffffff" }}
+              >
+                <div className="card-body text-center">
+                  <div
+                    className="icon mb-3"
+                    style={{
+                      fontSize: "2.5rem",
+                      color: "#FFE4B5", // Moccasin icon
+                    }}
+                  >
+                    📌
+                  </div>
+                  <h5 className="card-title">Intelligent Task Automation</h5>
+                  <p className="card-text">
+                    Automate workflows to make hiring faster and smoother.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <h2 className="mb-5 mt-5">What Our Users Say</h2>
+          <div className="row">
+            {/* Testimonial 1 */}
+            <div className="col-md-4 mb-4">
+              <div
+                className="card h-100 shadow-lg border-0"
+                style={{ backgroundColor: "#8B5E3C", color: "#ffffff" }}
+              >
+                <div className="card-body text-center">
+                  <p className="card-text">
+                    "The process is so simple and effective. It made recruitment
+                    effortless."
+                  </p>
+                  <h6 className="card-subtitle mt-3 text-light">- Amit Tondon</h6>
+                </div>
+              </div>
+            </div>
+            {/* Testimonial 2 */}
+            <div className="col-md-4 mb-4">
+              <div
+                className="card h-100 shadow-lg border-0"
+                style={{ backgroundColor: "#8B5E3C", color: "#ffffff" }}
+              >
+                <div className="card-body text-center">
+                  <p className="card-text">
+                    "I loved the task automation feature. It saved so much
+                    time!"
+                  </p>
+                  <h6 className="card-subtitle mt-3 text-light">- Swati Parmar</h6>
+                </div>
+              </div>
+            </div>
+            {/* Testimonial 3 */}
+            <div className="col-md-4 mb-4">
+              <div
+                className="card h-100 shadow-lg border-0"
+                style={{ backgroundColor: "#8B5E3C", color: "#ffffff" }}
+              >
+                <div className="card-body text-center">
+                  <p className="card-text">
+                    "This platform makes hiring transparent and skill-focused.
+                    Loved it!"
+                  </p>
+                  <h6 className="card-subtitle mt-3 text-light">
+                    - Aditya Shroff
+                  </h6>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      
+
       {/* Footer */}
       <footer className="footer py-3 bg-light text-dark">
         <p>Privacy Policy | Terms of Service | Contact</p>
