@@ -5,18 +5,15 @@ import "bootstrap/dist/css/bootstrap.min.css";
 
 const EmployerForm = () => {
   const [formData, setFormData] = useState({
-    companyName: "",
-    address: "",
-    companyDetails: "",
-    linkedin: "",
-    twitter: "",
-    website: "",
-    jobType: "job", // default to 'job', can also be 'internship'
     jobTitle: "",
-    jobDescription: "",
-    jobExperience: "",
-    workPreference: "WFO",
-    internshipDetails: "",
+  minExperience: 0,
+  skills: "",
+  jobType: "virtual", // Default to virtual
+  jobPartFull: "part",
+  numPosition: 0,
+  minSalary: 0,
+  maxSalary: 0,
+  account: "Org 1",
   });
 
   const handleInputChange = (e) => {
@@ -26,33 +23,25 @@ const EmployerForm = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const apiEndpoint =
-      formData.jobType === "job"
-      ? "https://api.trollgold.org/persistventures/assignment/make_Job"
-      : "https://api.trollgold.org/persistventures/assignment/make_Internship";
-     
-      
-
+    
     const payload = {
-      companyName: formData.companyName,
-      address: formData.address,
-      companyDetails: formData.companyDetails,
-      linkedin: formData.linkedin,
-      twitter: formData.twitter,
-      website: formData.website,
-      jobTitle: formData.jobTitle,
-      jobDescription: formData.jobDescription,
-      jobExperience: formData.jobExperience,
-      workPreference: formData.workPreference,
-      ...(formData.jobType === "internship" && {
-        internshipDetails: formData.internshipDetails,
-      }),
+      job_title: formData.jobTitle,
+      min_experience: parseInt(formData.minExperience, 10),
+      skills: formData.skills.split(",").map(skill => skill.trim()), // Convert comma-separated string to array
+      job_type: formData.jobType,
+      job_part_full: formData.jobPartFull,
+      num_position: parseInt(formData.numPosition, 10),
+      min_salary: parseInt(formData.minSalary, 10),
+      max_salary: parseInt(formData.maxSalary, 10),
+      account: formData.account,
     };
-
+  
     try {
-      const response = await axios.post(apiEndpoint, payload, {
-        headers: { "Content-Type": "application/json" },
-      });
+      const response = await axios.post(
+        "https://api.trollgold.org/persistventures/assignment/make_Job",
+        payload,
+        { headers: { "Content-Type": "application/json" } }
+      );
       alert("Posting successful!");
       console.log(response.data);
     } catch (error) {
@@ -60,198 +49,116 @@ const EmployerForm = () => {
       alert("There was an error submitting the form.");
     }
   };
-
   return (
-    <div className="landing-page bg-white text-center">
-      {/* Header */}
-      <header className="d-flex justify-content-between align-items-center p-3 bg-primary text-white">
-        <div className="h3 mb-0">Employer Portal</div>
-        <nav className="d-flex gap-3 align-items-center">
-          <a href="#home" className="text-white text-decoration-none">
-            Home
-          </a>
-          <a href="#about" className="text-white text-decoration-none">
-            About Us
-          </a>
-          <a href="#contact" className="text-white text-decoration-none">
-            Contact
-          </a>
-        </nav>
-      </header>
+    <Container className="py-5">
+    <Row className="justify-content-center">
+      <Col lg={8} md={10}>
+        <Card className="shadow p-4">
+          <Card.Body>
+            <h3 className="text-center mb-4">Post a Job</h3>
+            <Form onSubmit={handleSubmit}>
+              <Form.Group controlId="jobTitle" className="mb-3">
+                <Form.Label>Job Title</Form.Label>
+                <Form.Control
+                  type="text"
+                  name="jobTitle"
+                  value={formData.jobTitle}
+                  onChange={handleInputChange}
+                  placeholder="Enter job title"
+                  required
+                />
+              </Form.Group>
 
-      <Container className="py-5">
-        <Row className="justify-content-center">
-          <Col lg={8} md={10}>
-            <Card className="shadow p-4">
-              <Card.Body>
-                <h3 className="text-center mb-4">Post a Job or Internship</h3>
-                <Form onSubmit={handleSubmit}>
-                  <Form.Group controlId="companyName" className="mb-3">
-                    <Form.Label>Company Name</Form.Label>
-                    <Form.Control
-                      type="text"
-                      name="companyName"
-                      value={formData.companyName}
-                      onChange={handleInputChange}
-                      placeholder="Enter your company's name"
-                      required
-                    />
-                  </Form.Group>
+              <Form.Group controlId="minExperience" className="mb-3">
+                <Form.Label>Minimum Experience (years)</Form.Label>
+                <Form.Control
+                  type="number"
+                  name="minExperience"
+                  value={formData.minExperience}
+                  onChange={handleInputChange}
+                  placeholder="Enter minimum experience required"
+                />
+              </Form.Group>
 
-                  <Form.Group controlId="address" className="mb-3">
-                    <Form.Label>Company Address</Form.Label>
-                    <Form.Control
-                      type="text"
-                      name="address"
-                      value={formData.address}
-                      onChange={handleInputChange}
-                      placeholder="Enter your company's address"
-                      required
-                    />
-                  </Form.Group>
+              <Form.Group controlId="skills" className="mb-3">
+                <Form.Label>Skills Required</Form.Label>
+                <Form.Control
+                  type="text"
+                  name="skills"
+                  value={formData.skills}
+                  onChange={handleInputChange}
+                  placeholder="Enter required skills (comma-separated)"
+                />
+              </Form.Group>
 
-                  <Form.Group controlId="companyDetails" className="mb-3">
-                    <Form.Label>Company Details</Form.Label>
-                    <Form.Control
-                      as="textarea"
-                      name="companyDetails"
-                      value={formData.companyDetails}
-                      onChange={handleInputChange}
-                      placeholder="Provide some details about your company"
-                      rows={3}
-                      required
-                    />
-                  </Form.Group>
+              <Form.Group controlId="jobType" className="mb-3">
+                <Form.Label>Job Type</Form.Label>
+                <Form.Select
+                  name="jobType"
+                  value={formData.jobType}
+                  onChange={handleInputChange}
+                >
+                  <option value="virtual">Virtual</option>
+                  <option value="on-site">On-site</option>
+                </Form.Select>
+              </Form.Group>
 
-                  <Form.Group controlId="linkedin" className="mb-3">
-                    <Form.Label>LinkedIn Profile</Form.Label>
-                    <Form.Control
-                      type="text"
-                      name="linkedin"
-                      value={formData.linkedin}
-                      onChange={handleInputChange}
-                      placeholder="Enter LinkedIn URL"
-                    />
-                  </Form.Group>
+              <Form.Group controlId="jobPartFull" className="mb-3">
+                <Form.Label>Job Nature</Form.Label>
+                <Form.Select
+                  name="jobPartFull"
+                  value={formData.jobPartFull}
+                  onChange={handleInputChange}
+                >
+                  <option value="part">Part-time</option>
+                  <option value="full">Full-time</option>
+                </Form.Select>
+              </Form.Group>
 
-                  <Form.Group controlId="twitter" className="mb-3">
-                    <Form.Label>Twitter Profile</Form.Label>
-                    <Form.Control
-                      type="text"
-                      name="twitter"
-                      value={formData.twitter}
-                      onChange={handleInputChange}
-                      placeholder="Enter Twitter URL"
-                    />
-                  </Form.Group>
+              <Form.Group controlId="numPosition" className="mb-3">
+                <Form.Label>Number of Positions</Form.Label>
+                <Form.Control
+                  type="number"
+                  name="numPosition"
+                  value={formData.numPosition}
+                  onChange={handleInputChange}
+                  placeholder="Enter number of positions"
+                />
+              </Form.Group>
 
-                  <Form.Group controlId="website" className="mb-3">
-                    <Form.Label>Company Website</Form.Label>
-                    <Form.Control
-                      type="text"
-                      name="website"
-                      value={formData.website}
-                      onChange={handleInputChange}
-                      placeholder="Enter your company's website URL"
-                    />
-                  </Form.Group>
+              <Form.Group controlId="minSalary" className="mb-3">
+                <Form.Label>Minimum Salary</Form.Label>
+                <Form.Control
+                  type="number"
+                  name="minSalary"
+                  value={formData.minSalary}
+                  onChange={handleInputChange}
+                  placeholder="Enter minimum salary"
+                />
+              </Form.Group>
 
-                  <Form.Group controlId="jobType" className="mb-3">
-                    <Form.Label>Type</Form.Label>
-                    <Form.Select
-                      name="jobType"
-                      value={formData.jobType}
-                      onChange={handleInputChange}
-                    >
-                      <option value="job">Job</option>
-                      <option value="internship">Internship</option>
-                    </Form.Select>
-                  </Form.Group>
+              <Form.Group controlId="maxSalary" className="mb-3">
+                <Form.Label>Maximum Salary</Form.Label>
+                <Form.Control
+                  type="number"
+                  name="maxSalary"
+                  value={formData.maxSalary}
+                  onChange={handleInputChange}
+                  placeholder="Enter maximum salary"
+                />
+              </Form.Group>
 
-                  <Form.Group controlId="jobTitle" className="mb-3">
-                    <Form.Label>Job/Internship Title</Form.Label>
-                    <Form.Control
-                      type="text"
-                      name="jobTitle"
-                      value={formData.jobTitle}
-                      onChange={handleInputChange}
-                      placeholder="Enter the title"
-                      required
-                    />
-                  </Form.Group>
-
-                  <Form.Group controlId="jobDescription" className="mb-3">
-                    <Form.Label>Job/Internship Description</Form.Label>
-                    <Form.Control
-                      as="textarea"
-                      name="jobDescription"
-                      value={formData.jobDescription}
-                      onChange={handleInputChange}
-                      placeholder="Provide a brief description"
-                      rows={4}
-                      required
-                    />
-                  </Form.Group>
-
-                  <Form.Group controlId="jobExperience" className="mb-3">
-                    <Form.Label>Experience Required</Form.Label>
-                    <Form.Control
-                      type="text"
-                      name="jobExperience"
-                      value={formData.jobExperience}
-                      onChange={handleInputChange}
-                      placeholder="Enter years of experience"
-                    />
-                  </Form.Group>
-
-                  <Form.Group controlId="workPreference" className="mb-3">
-                    <Form.Label>Work Preference</Form.Label>
-                    <div>
-                      <Form.Check
-                        inline
-                        type="radio"
-                        label="WFH"
-                        name="workPreference"
-                        value="WFH"
-                        checked={formData.workPreference === "WFH"}
-                        onChange={handleInputChange}
-                      />
-                      <Form.Check
-                        inline
-                        type="radio"
-                        label="WFO"
-                        name="workPreference"
-                        value="WFO"
-                        checked={formData.workPreference === "WFO"}
-                        onChange={handleInputChange}
-                      />
-                    </div>
-                  </Form.Group>
-
-                  {formData.jobType === "internship" && (
-                    <Form.Group controlId="internshipDetails" className="mb-3">
-                      <Form.Label>Internship Details</Form.Label>
-                      <Form.Control
-                        as="textarea"
-                        name="internshipDetails"
-                        value={formData.internshipDetails}
-                        onChange={handleInputChange}
-                        placeholder="Provide details about the internship"
-                        rows={3}
-                      />
-                    </Form.Group>
-                  )}
-
-                  <Button type="submit" variant="primary" className="w-100">
-                    Submit Posting
-                  </Button>
-                </Form>
-              </Card.Body>
-            </Card>
-          </Col>
-        </Row>
-      </Container>
-    </div>
+              <Button type="submit" variant="primary" className="w-100">
+                Submit Job Posting
+              </Button>
+            </Form>
+          </Card.Body>
+        </Card>
+      </Col>
+    </Row>
+  </Container>
+    
+    
   );
 };
 
