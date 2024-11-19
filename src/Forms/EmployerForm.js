@@ -8,8 +8,8 @@ const EmployerForm = () => {
     jobTitle: "",
   minExperience: 0,
   skills: "",
-  jobType: "virtual", // Default to virtual
-  jobPartFull: "part",
+  jobType: "", 
+  jobPartFull: "",
   numPosition: 0,
   minSalary: 0,
   maxSalary: 0,
@@ -57,6 +57,17 @@ const EmployerForm = () => {
           <Card.Body>
             <h3 className="text-center mb-4">Post a Job</h3>
             <Form onSubmit={handleSubmit}>
+            <Form.Group controlId="jobTitle" className="mb-3">
+                <Form.Label>Organization Name</Form.Label>
+                <Form.Control
+                  type="text"
+                  name="account"
+                  value={formData.account}
+                  onChange={handleInputChange}
+                  placeholder="Enter organization name"
+                  required
+                />
+              </Form.Group>
               <Form.Group controlId="jobTitle" className="mb-3">
                 <Form.Label>Job Title</Form.Label>
                 <Form.Control
