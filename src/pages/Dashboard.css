@@ -1,0 +1,107 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.dashboard-layout {
+    display: grid;
+    grid-template-rows: auto 1fr auto; /* Header, main content, footer */
+    grid-template-columns: 300px 1fr; /* Sidebar, main content */
+    height: 100vh;
+    grid-template-areas:
+        "header header"
+        "sidebar main"
+        "sidebar footer";
+}
+header {
+    grid-area: header;
+    background-color: #A17C5D;
+    color: white;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Sidebar Styling */
+.dashboard-container {
+    grid-area: sidebar;
+    background-color: #ffffff;
+    padding: 20px;
+    
+    overflow-y: auto;
+    border-right: 1px solid #e6e6e6;
+    box-shadow: 2px 0 8px rgba(0, 0, 0, 0.1);
+}
+
+.dashboard-header {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+/* Dropdown Button */
+.dropdown-btn {
+    background-color: #A17C5D;
+    border: none;
+    color: #ffffff;
+    text-align: left;
+    padding: 10px;
+    width: 100%;
+    cursor: pointer;
+    font-size: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
+
+.dropdown-btn:hover {
+    background-color: #665a3e;
+    transform: translateY(-1px);
+}
+
+.arrow {
+    font-size: 12px;
+}
+
+/* Dropdown Content */
+.dropdown-content {
+    display: flex;
+    flex-direction: column;
+    background-color: #f3f3f3;
+    padding: 5px 10px;
+    margin: 5px 0;
+    border-left: 3px solid #A17C5D;
+}
+
+.dropdown-content .nav-link {
+    color: #333;
+    padding: 5px;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.dropdown-content .nav-link:hover {
+    background-color: #A17C5D;
+    color: #ffffff;
+}
+
+/* Main Content Styling */
+.main-content {
+    grid-area: main;
+    padding: 20px;
+    background-color: #f9f9f9;
+    overflow-y: auto;
+}
+
+/* Footer Styling */
+.footer {
+    grid-area: footer;
+    background-color: #f9f9f9;
+    padding: 10px;
+    text-align: center;
+    border-top: 1px solid #e6e6e6;
+}

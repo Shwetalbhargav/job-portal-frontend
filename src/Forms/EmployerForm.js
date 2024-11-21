@@ -5,11 +5,11 @@ import "bootstrap/dist/css/bootstrap.min.css";
 
 const EmployerForm = () => {
   const [formData, setFormData] = useState({
-    jobTitle: "",
+    jobTitle: "string",
   minExperience: 0,
-  skills: "",
-  jobType: "", 
-  jobPartFull: "",
+  skills: "string",
+  jobType: "virtual", 
+  jobPartFull: "part",
   numPosition: 0,
   minSalary: 0,
   maxSalary: 0,

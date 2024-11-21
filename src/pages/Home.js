@@ -3,6 +3,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "./Home.css";
 import JobSeekerForm from "../Forms/JobSeekerForm";
 
+
 import { Link } from "react-router-dom";
 
 
@@ -14,7 +15,10 @@ const LandingPage = () => {
         <div className="h3 mb-0">JobPortal</div>
         <nav className="d-flex gap-3 align-items-center">
           <a href="#home" className="text-dark text-decoration-none">Home</a>
-          <a href="#about" className="text-dark text-decoration-none">About Us</a>
+          <Link to="/Dashboard">
+          <a className="text-dark text-decoration-none">Dashboard</a>
+          </Link>
+         
           <a href="#contact" className="text-dark text-decoration-none">Contact</a>
           <button className="btn btn-outline-brown">Get Started</button>
         </nav>

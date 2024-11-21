@@ -1,38 +1,95 @@
 import React, { useState, useEffect } from "react";
-import { Card } from "react-bootstrap";
-import { getApplicants } from "../services/api"; 
+import { Card, Form, Button } from "react-bootstrap";
+
 
 const JobListingPage = () => {
-  const [candidates, setCandidates] = useState([]);
+  const [formData, setFormData] = useState({
+    projectName: "",
+    organisation: "",
+    listingNo: "",
+    process: "",
+    designation: "",
+    date: "",
+    conversionRate: "",
+    internshala: "",
+    leaderLink: "",
+    candidateLink: "",
+    assignmentLink: "",
+  });
 
   useEffect(() => {
-    const fetchCandidates = async () => {
+    const fetchData = async () => {
       try {
-        const applicants = await getApplicants();
-        setCandidates(applicants);
+        const response = await fetch(
+          "https://api.trollgold.org/persistventures/assignment/activeListing"
+        );
+        const data = await response.json();
+
+        // Assuming the response data matches the structure provided
+        setFormData({
+          projectName: data["Project Name"] || "",
+          organisation: data["Organisation"] || "",
+          listingNo: data["Listing No"] || "",
+          process: data["Process"] || "",
+          designation: data["Designation"] || "",
+          date: data["Date"] || "",
+          conversionRate: data["Conversion Rate"] || "",
+          internshala: data["Internshala"] || "",
+          leaderLink: data["Leader link"] || "",
+          candidateLink: data["Candidate link"] || "",
+          assignmentLink: data["Assignment link"] || "",
+        });
       } catch (error) {
-        console.error("Error fetching applicants:", error);
+        console.error("Error fetching data:", error);
       }
     };
 
-    fetchCandidates();
+    fetchData();
   }, []);
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prevState) => ({
+      ...prevState,
+      [name]: value,
+    }));
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log("Submitted data:", formData);
+    // You can add POST request logic here
+  };
 
   return (
     <div className="container mt-5">
       <Card className="mb-4">
         <Card.Body>
           <Card.Title>Job Listing</Card.Title>
-          <ul>
-            {candidates.map((candidate) => (
-              <li key={candidate._id}>
-                <strong>Name:</strong> {candidate.name} |
-                <strong> Email:</strong> {candidate.email} |
-                <strong> Job Title:</strong> {candidate.jobTitle} |
-                <strong> Experience:</strong> {candidate.jobExperience}
-              </li>
+          <div className="container mt-5">
+      <Card className="mb-4">
+        <Card.Body>
+          <Card.Title>Job Assignment Form</Card.Title>
+          <Form onSubmit={handleSubmit}>
+            {Object.keys(formData).map((key) => (
+              <Form.Group className="mb-3" controlId={key} key={key}>
+                <Form.Label>{key.replace(/([A-Z])/g, " $1")}</Form.Label>
+                <Form.Control
+                  type="text"
+                  name={key}
+                  value={formData[key]}
+                  onChange={handleChange}
+                  placeholder={`Enter ${key.replace(/([A-Z])/g, " $1")}`}
+                />
+              </Form.Group>
             ))}
-          </ul>
+            <Button variant="primary" type="submit">
+              Submit
+            </Button>
+          </Form>
+        </Card.Body>
+      </Card>
+    </div>
         </Card.Body>
       </Card>
     </div>
