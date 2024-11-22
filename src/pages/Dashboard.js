@@ -35,9 +35,9 @@ export const Dashboard = () => {
                         </button>
                         {dropdownStates['job-posting'] && (
                             <div className="dropdown-content">
-                                <Link to="/job-posting/full-time" className="nav-link">Post Full Time Job</Link>
-                                <Link to="/job-posting/internship-paid" className="nav-link">Post Full Time Internship</Link>
-                                <Link to="/job-posting/internship-unpaid" className="nav-link">Post Unpaid Internship</Link>
+                                <Link to="/EmployerForm" className="nav-link">Post Full Time Job</Link>
+                                <Link to="/PaidInternship" className="nav-link">Post Full Time Internship</Link>
+                                <Link to="/UnpaidInternship" className="nav-link">Post Unpaid Internship</Link>
                             </div>
                         )}
                     </li>
@@ -47,11 +47,11 @@ export const Dashboard = () => {
                         </button>
                         {dropdownStates['job-listing'] && (
                             <div className="dropdown-content">
-                                <Link to="/job-listing/get-list" className="nav-link">Get List</Link>
-                                <Link to="/job-listing/automate" className="nav-link">Automate List</Link>
-                                <Link to="/job-listing/active" className="nav-link">Active Jobs</Link>
-                                <Link to="/job-listing/closed" className="nav-link">Closed Jobs</Link>
-                                <Link to="/job-listing/status" className="nav-link">Job Status</Link>
+                                <Link to="/GetListing" className="nav-link">Get List</Link>
+                                <Link to="/AutomateListin" className="nav-link">Automate List</Link>
+                                <Link to="/JobListing" className="nav-link">Active Jobs</Link>
+                                <Link to="/ClosedListing" className="nav-link">Closed Jobs</Link>
+                                <Link to="/JobStatus" className="nav-link">Job Status</Link>
                             </div>
                         )}
                     </li>
@@ -61,8 +61,8 @@ export const Dashboard = () => {
                         </button>
                         {dropdownStates['assignment'] && (
                             <div className="dropdown-content">
-                                <Link to="/assignment/get" className="nav-link">Get Assignment</Link>
-                                <Link to="/assignment/add" className="nav-link">Add Assignment</Link>
+                                <Link to="/GetAssignment" className="nav-link">Get Assignment</Link>
+                                <Link to="/AddAssignment" className="nav-link">Add Assignment</Link>
                             </div>
                         )}
                     </li>
@@ -72,48 +72,48 @@ export const Dashboard = () => {
                         </button>
                         {dropdownStates['messaging'] && (
                             <div className="dropdown-content">
-                                <Link to="/messaging/get-message" className="nav-link">Get Message</Link>
-                                <Link to="/messaging/set-message" className="nav-link">Set Message</Link>
-                                <Link to="/messaging/get-chat" className="nav-link">Get Chat</Link>
-                                <Link to="/messaging/send-message" className="nav-link">Send Message</Link>
+                                <Link to="/GetMessage" className="nav-link">Get Message</Link>
+                                <Link to="/SetMessage" className="nav-link">Set Message</Link>
+                                <Link to="/GetChat" className="nav-link">Get Chat</Link>
+                                <Link to="/SendMessage" className="nav-link">Send Message</Link>
                             </div>
                         )}
                     </li>
                     <li className="nav-item">
-                        <button className="dropdown-btn" onClick={() => toggleDropdown('messaging')}>
-                            Candidate Management <span className="arrow">{dropdownStates['messaging'] ? '▼' : '▶'}</span>
+                        <button className="dropdown-btn" onClick={() => toggleDropdown('Candidate Management')}>
+                            Candidate Management <span className="arrow">{dropdownStates['Candidate Management'] ? '▼' : '▶'}</span>
                         </button>
-                        {dropdownStates['messaging'] && (
+                        {dropdownStates['Candidate Management'] && (
                             <div className="dropdown-content">
-                                <Link to="/messaging/get-message" className="nav-link">Reply Candidate</Link>
-                                <Link to="/messaging/set-message" className="nav-link">Reply Candidate Bot</Link>
-                                <Link to="/messaging/get-chat" className="nav-link">Candidate Email</Link>
-                                <Link to="/messaging/send-message" className="nav-link">Hire Candidate</Link>
+                                <Link to="/ReplyCandidate" className="nav-link">Reply Candidate</Link>
+                                <Link to="/ReplyCandidateBot" className="nav-link">Reply Candidate Bot</Link>
+                                <Link to="/CandidateEmail" className="nav-link">Candidate Email</Link>
+                                <Link to="/HireCandidate" className="nav-link">Hire Candidate</Link>
                             </div>
                         )}
                     </li>
                     <li className="nav-item">
-                        <button className="dropdown-btn" onClick={() => toggleDropdown('messaging')}>
-                            Announcement <span className="arrow">{dropdownStates['messaging'] ? '▼' : '▶'}</span>
+                        <button className="dropdown-btn" onClick={() => toggleDropdown('Announcement')}>
+                            Announcement <span className="arrow">{dropdownStates['Announcement'] ? '▼' : '▶'}</span>
                         </button>
-                        {dropdownStates['messaging'] && (
+                        {dropdownStates['Announcement'] && (
                             <div className="dropdown-content">
-                                <Link to="/messaging/get-message" className="nav-link">Announcement</Link>
-                                <Link to="/messaging/set-message" className="nav-link">Job Listing Status</Link>
-                                <Link to="/messaging/get-chat" className="nav-link">Reply Daily</Link>
-                                <Link to="/messaging/send-message" className="nav-link">Get Update</Link>
+                                <Link to="/Announcement" className="nav-link">Announcement</Link>
+                                <Link to="/JobStatus" className="nav-link">Job Listing Status</Link>
+                                <Link to="/ReplyDaily" className="nav-link">Reply Daily</Link>
+                                <Link to="/GetUpdate" className="nav-link">Get Update</Link>
                             </div>
                         )}
                     </li>
                     <li className="nav-item">
-                        <button className="dropdown-btn" onClick={() => toggleDropdown('messaging')}>
-                            Review and Evaluation <span className="arrow">{dropdownStates['messaging'] ? '▼' : '▶'}</span>
+                        <button className="dropdown-btn" onClick={() => toggleDropdown('Review and Evaluation')}>
+                            Review and Evaluation <span className="arrow">{dropdownStates['Review and Evaluation'] ? '▼' : '▶'}</span>
                         </button>
-                        {dropdownStates['messaging'] && (
+                        {dropdownStates['Review and Evaluation'] && (
                             <div className="dropdown-content">
-                                <Link to="/messaging/get-message" className="nav-link">Mark Evaluation Interhsala</Link>
-                                <Link to="/messaging/set-message" className="nav-link">Mark Evaluation Bot</Link>
-                                <Link to="/messaging/get-chat" className="nav-link">Mark future Evaluation</Link>
+                                <Link to="/MarkEvalIntershala" className="nav-link">Mark Evaluation Interhsala</Link>
+                                <Link to="/MarkEvalBot" className="nav-link">Mark Evaluation Bot</Link>
+                                <Link to="/MarkEvalFuture" className="nav-link">Mark future Evaluation</Link>
                                 
                             </div>
                         )}
@@ -124,8 +124,8 @@ export const Dashboard = () => {
                         </button>
                         {dropdownStates['faq'] && (
                             <div className="dropdown-content">
-                                <Link to="/faq/get-question" className="nav-link">Get Question</Link>
-                                <Link to="/faq/reply" className="nav-link">Reply Question</Link>
+                                <Link to="/GetQuestion" className="nav-link">Get Question</Link>
+                                <Link to="/ReplyQuestion" className="nav-link">Reply Question</Link>
                             </div>
                         )}
                     </li>
@@ -133,10 +133,32 @@ export const Dashboard = () => {
             </div>
 
             {/* Main Content */}
-            <div className="main-content">
-                <h2>Main Content Area</h2>
-                <p>This is where the rest of your content will appear.</p>
-            </div>
+            <div className="main-content d-flex flex-wrap justify-content-around py-4">
+        <Link to="/job-listing/get-list" className="card-link">
+          <div className="content-card shadow-sm">
+            <h3>Job Listings</h3>
+            <p>View and manage all job postings.</p>
+          </div>
+        </Link>
+        <Link to="/messaging/get-message" className="card-link">
+          <div className="content-card shadow-sm">
+            <h3>Messaging</h3>
+            <p>Communicate with candidates and employers.</p>
+          </div>
+        </Link>
+        <Link to="/faq/get-question" className="card-link">
+          <div className="content-card shadow-sm">
+            <h3>FAQs</h3>
+            <p>View or answer common questions.</p>
+          </div>
+        </Link>
+        <Link to="/messaging/set-message" className="card-link">
+          <div className="content-card shadow-sm">
+            <h3>Announcements</h3>
+            <p>Post important updates and announcements.</p>
+          </div>
+        </Link>
+      </div>
 
             {/* Footer */}
             <footer className="footer">
