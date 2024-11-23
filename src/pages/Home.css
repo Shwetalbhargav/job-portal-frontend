@@ -1,11 +1,15 @@
 /* Custom colors for the Bootstrap theme */
 .bg-brown {
-  background-color: #A17C5D !important;
+  background-color:rgb(120, 167, 185) !important; /* Vibrant golden yellow */
+}
+
+.navbar a {
+  color: #FFFFFF !important; /* White text for better contrast */
 }
 
 .btn-brown {
-  background-color: #A17C5D;
-  border-color: #A17C5D;
+  background-color: rgb(67, 81, 133);
+  border-color: rgb(67, 81, 133);
   transition: all 0.3s ease;
 }
 
@@ -94,4 +98,30 @@
 .step:hover p,
 .step:hover a {
   color: #a17c5d;
+}
+
+/* Updated Card Section */
+.card {
+  background: linear-gradient(120deg, #92d8e3, #28ccd8, #08cde3); /* Vibrant gradient matching image */
+  color: #FFFFFF !important;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3); /* Enhance the shadow */
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px) scale(1.05);
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.4); /* Deeper hover shadow */
+}
+
+/* Icon Colors in Cards */
+.card .icon {
+  color: #6ce8f0; /* Golden yellow for icons */
+}
+
+.card-title {
+  color: #FFFFFF; /* White text for titles */
+}
+
+.card-text {
+  color: #FDF5E6; /* Light cream for better readability */
 }

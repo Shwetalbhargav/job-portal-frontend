@@ -27,13 +27,19 @@ const LandingPage = () => {
       </header>
 
       {/* Hero Section and User Selection */}
-<section className="hero-section bg-light py-5 text-center">
+<section className="hero-section bg-light py-5 text-center"
+style={{
+  backgroundImage: "url('/LandingPage.png')", 
+  backgroundSize: "cover",
+  backgroundPosition: "center",
+   
+}}>
   <div className="container">
     {/* Hero Header */}
     <h1 className="display-4 fw-bold text-dark mb-4">
       Find the Perfect Opportunity or the Perfect Candidate
     </h1>
-    <p className="text-secondary fs-5 mb-5">
+    <p className="text-dark fs-5 mb-5">
       Join a community dedicated to matching job seekers with employers.
     </p>
 
@@ -46,7 +52,7 @@ const LandingPage = () => {
             className="btn btn-primary px-5 py-3 shadow rounded-pill d-flex align-items-center gap-2"
             style={{
               fontSize: "1rem",
-              backgroundColor: "#A17C5D",
+              backgroundColor: "rgb(67, 81, 133)",
               border: "none",
             }}
           >
@@ -59,7 +65,7 @@ const LandingPage = () => {
             className="btn btn-secondary px-5 py-3 shadow rounded-pill d-flex align-items-center gap-2"
             style={{
               fontSize: "1rem",
-              backgroundColor: "#7B5D44",
+              backgroundColor: "rgb(67, 81, 133)",
               border: "none",
             }}
           >
@@ -110,7 +116,7 @@ const LandingPage = () => {
       {/* New Enhanced Section */}
       <section
         className="features-section py-5"
-        style={{ backgroundColor: "#A17C5D", color: "#ffffff" }} // Light brown background with white text
+        style={{ backgroundColor: "rgb(120, 167, 185)", color: "#ffffff" }} // Light brown background with white text
       >
         <div className="container">
           <h2 className="mb-5">Why Choose JobPortal?</h2>
@@ -119,7 +125,7 @@ const LandingPage = () => {
             <div className="col-md-4 mb-4">
               <div
                 className="card h-100 shadow-lg border-0"
-                style={{ backgroundColor: "#8B5E3C", color: "#ffffff" }} // Darker brown card background
+                style={{  backgroundColor: "rgb(109, 228, 223)", color: "#ffffff"   }} 
               >
                 <div className="card-body text-center">
                   <div
