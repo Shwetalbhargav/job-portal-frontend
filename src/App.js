@@ -32,6 +32,7 @@ import MarkEvalBot from './Evaluation and Review/MarkEvalBot';
 import MarkEvalFuture from './Evaluation and Review/MarkEvalFuture';
 import GetQuestion from './FAQ/GetQuestion';
 import ReplyQuestion from './FAQ/ReplyQuestion';
+import Footer from './pages/Footer';
 
 function App() {
   return (
@@ -68,7 +69,9 @@ function App() {
         <Route path='/MarkEvalFuture' element={<MarkEvalFuture/>}/>
         <Route path='/GetQuestion' element={<GetQuestion/>}/>
         <Route path='/ReplyQuestion' element={<ReplyQuestion/>}/>
+        
       </Routes>
+      <Footer/>
     </Router>
    
   );

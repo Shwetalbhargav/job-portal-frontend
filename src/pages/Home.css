@@ -25,3 +25,73 @@
 .text-brown {
   color: #A17C5D;
 }
+
+.how-it-works {
+  overflow: hidden;
+  color: #333;
+}
+
+.animated-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(120deg, #a17c5d, #ffe0b3, #a17c5d);
+  background-size: 300% 300%;
+  animation: backgroundMove 10s infinite;
+  z-index: 0;
+  opacity: 0.7;
+}
+
+@keyframes backgroundMove {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.container {
+  z-index: 1;
+}
+
+.step {
+  flex: 1;
+  margin: 0 15px;
+  padding: 20px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.step:hover {
+  transform: translateY(-5px);
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+.step .icon {
+  font-size: 3rem;
+  color: #a17c5d;
+  margin-bottom: 10px;
+}
+
+.step p {
+  margin: 0;
+  font-size: 1.2rem;
+  color: #555;
+}
+
+.step a {
+  color: inherit;
+}
+
+.step:hover p,
+.step:hover a {
+  color: #a17c5d;
+}
