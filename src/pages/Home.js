@@ -41,7 +41,7 @@ const LandingPage = () => {
     <div className="form-container d-inline-flex flex-column align-items-center gap-3">
       <h2 className="text-dark">I’m a...</h2>
       <div className="d-flex justify-content-center gap-4 mt-2">
-        <Link to="/JobSeekerForm">
+        <Link to="/JobSeekerForm" style={{ textDecoration: "none" }}>
           <button
             className="btn btn-primary px-5 py-3 shadow rounded-pill d-flex align-items-center gap-2"
             style={{
@@ -54,7 +54,7 @@ const LandingPage = () => {
             Job Seeker
           </button>
         </Link>
-        <Link to="/EmployerForm">
+        <Link to="/EmployerForm" style={{ textDecoration: "none" }}>
           <button
             className="btn btn-secondary px-5 py-3 shadow rounded-pill d-flex align-items-center gap-2"
             style={{
