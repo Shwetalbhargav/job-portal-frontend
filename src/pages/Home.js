@@ -246,6 +246,21 @@ style={{
         </div>
       </section>
 
+      <div className="form-section">
+  <h1 className="form-title">Get in Touch</h1>
+  <p className="form-description">
+    Have questions or want to reach out? Fill in the form below, and we'll get back to you as soon as possible.
+  </p>
+  <form className="form">
+    <div className="form-input-group">
+      <input type="text" placeholder="Your Name" className="form-input" />
+      <input type="email" placeholder="Your Email" className="form-input" />
+    </div>
+    <textarea placeholder="Your Message" rows="6" className="form-textarea"></textarea>
+    <button type="submit" className="form-button">Send Message</button>
+  </form>
+</div>
+
       
 
       

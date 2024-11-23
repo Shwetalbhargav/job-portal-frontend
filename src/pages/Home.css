@@ -125,3 +125,78 @@
 .card-text {
   color: #FDF5E6; /* Light cream for better readability */
 }
+
+/* Form Section */
+/* Form Section */
+.form-section {
+  background-color: rgb(120, 167, 185); /* Background color */
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+}
+
+.form-title {
+  color: #ffffff; /* White text */
+  text-align: center;
+  margin-bottom: 10px;
+  font-size: 2rem;
+}
+
+.form-description {
+  color: #ffffff; /* White text */
+  text-align: center;
+  margin-bottom: 40px; /* Larger spacing below description */
+  font-size: 1rem;
+}
+
+.form {
+  width: 100%;
+  max-width: 800px; /* Adjusted width */
+  display: flex;
+  flex-direction: column;
+  gap: 30px; /* Larger spacing between elements */
+}
+
+.form-input-group {
+  display: flex;
+  gap: 20px; /* Larger spacing between inputs */
+}
+
+.form-input {
+  flex: 1;
+  padding: 15px; /* Increased padding for larger input fields */
+  border: 1px solid #333;
+  border-radius: 4px;
+  background-color: rgb(255, 255, 255); /* Dark background for contrast */
+  color: #ffffff; /* White text */
+  outline: none;
+}
+
+.form-textarea {
+  width: 100%;
+  padding: 15px; /* Increased padding for comfort */
+  border: 1px solid #333;
+  border-radius: 4px;
+  background-color: #ffffff; /* Dark background for contrast */
+  color: #ffffff; /* White text */
+  outline: none;
+}
+
+.form-button {
+  width: 100%;
+  padding: 15px;
+  border: none;
+  border-radius: 4px;
+  background-color: #ffffff; /* White button */
+  color: #008cba; /* Black text */
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.form-button:hover {
+  background-color: #f0f0f0;
+}
