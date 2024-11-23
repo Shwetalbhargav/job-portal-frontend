@@ -4,7 +4,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 
 const Footer = () => {
   return (
-    <footer className="py-4" style={{ backgroundColor: "#f8f8f8", color: "#333" }}>
+    <footer className="py-4" style={{ backgroundColor: "rgb(120, 167, 185)", color: "#ffffff" }}>
       <div className="container">
         <div className="row">
           {/* Swissmote Section */}
