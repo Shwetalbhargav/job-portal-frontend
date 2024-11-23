@@ -17,23 +17,24 @@ const LandingPage = () => {
       {/* Hero Section and User Selection */}
 <section className="hero-section bg-light py-5 text-center"
 style={{
-  backgroundImage: "url('/LandingPage.png')", 
+  backgroundImage: "url('/page1.png')", 
   backgroundSize: "cover",
   backgroundPosition: "center",
+ 
    
 }}>
   <div className="container">
     {/* Hero Header */}
-    <h1 className="display-4 fw-bold text-dark mb-4">
+    <h1 className="display-4 fw-bold mb-4" style={{ color: "#000000" }}>
       Find the Perfect Opportunity or the Perfect Candidate
     </h1>
-    <p className="text-dark fs-5 mb-5">
+    <p className=" fs-5 mb-5" style={{ color: "#0f3460)" }}>
       Join a community dedicated to matching job seekers with employers.
     </p>
 
     {/* User Selection */}
     <div className="form-container d-inline-flex flex-column align-items-center gap-3">
-      <h2 className="text-dark">I’m a...</h2>
+      <h2 className="text" style={{ color: "#0f3460" }}>I’m a...</h2>
       <div className="d-flex justify-content-center gap-4 mt-2">
         <Link to="/JobSeekerForm" style={{ textDecoration: "none" }}>
           <button
@@ -62,7 +63,7 @@ style={{
           </button>
         </Link>
       </div>
-      <p className="text-secondary mt-3">Choose an option to get started and explore opportunities.</p>
+      <p className="mt-3" style={{ color: "rgb(67, 81, 133)" }}>Choose an option to get started and explore opportunities.</p>
     </div>
   </div>
 
@@ -104,7 +105,7 @@ style={{
       {/* New Enhanced Section */}
       <section
         className="features-section py-5"
-        style={{ backgroundColor: "rgb(120, 167, 185)", color: "#ffffff" }} // Light brown background with white text
+        style={{ backgroundColor: "rgb(120, 167, 185)", color: "#ffffff" }} 
       >
         <div className="container">
           <h2 className="mb-5">Why Choose JobPortal?</h2>
