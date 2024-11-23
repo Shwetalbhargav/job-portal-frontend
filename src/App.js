@@ -33,10 +33,12 @@ import MarkEvalFuture from './Evaluation and Review/MarkEvalFuture';
 import GetQuestion from './FAQ/GetQuestion';
 import ReplyQuestion from './FAQ/ReplyQuestion';
 import Footer from './pages/Footer';
+import Navbar from './pages/Navbar';
 
 function App() {
   return (
     <Router>
+      <Navbar/>
       <Routes>
         <Route path='/' element ={<LandingPage/>}/>
         <Route path='/JobSeekerForm' element={<JobSeekerForm/>}/>

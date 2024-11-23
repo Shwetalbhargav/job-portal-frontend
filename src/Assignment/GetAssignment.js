@@ -50,7 +50,8 @@ const GetAssignment = () => {
   };
 
   return (
-    <div className="container mt-5">
+    <div className="container mt-5"
+    >
       <h1 className="text-center">Get Assignments Form</h1>
       <form onSubmit={handleSubmit} className="mt-4">
         <div className="form-group mb-3">

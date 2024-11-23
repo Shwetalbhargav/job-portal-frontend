@@ -12,19 +12,7 @@ import { Link } from "react-router-dom";
 const LandingPage = () => {
   return (
     <div className="landing-page bg-white text-center">
-      {/* Header */}
-      <header className="d-flex justify-content-between align-items-center p-3 bg-brown text-white">
-        <div className="h3 mb-0">SwissMote</div>
-        <nav className="d-flex gap-3 align-items-center">
-          <a href="#home" className="text-dark text-decoration-none">Home</a>
-          <Link to="/Dashboard" className="text-dark text-decoration-none">
-          Dashboard
-          </Link>
-         
-          <a href="#contact" className="text-dark text-decoration-none">Contact</a>
-          <button className="btn btn-outline-brown">Get Started</button>
-        </nav>
-      </header>
+      
 
       {/* Hero Section and User Selection */}
 <section className="hero-section bg-light py-5 text-center"

@@ -1,0 +1,83 @@
+/* General Navbar Styles */
+.navbar {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+  }
+  
+  /* Brand Styling */
+  .brand {
+    font-weight: bold;
+    font-size: 1.5rem;
+    color: white;
+  }
+  
+  /* Navigation Button Styles */
+  .nav-btn {
+    background-color: transparent;
+    color: white;
+    border: none;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    padding: 5px 10px;
+    transition: background-color 0.3s, color 0.3s;
+    text-decoration: none;
+  }
+  
+  .nav-btn:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    color: #fff;
+    border-radius: 5px;
+  }
+  
+  /* Auth Button Styles */
+  .auth-btn {
+    border: 1px solid white;
+    background-color: transparent;
+    color: white;
+    font-size: 0.9rem;
+    padding: 5px 15px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+  }
+  
+  .auth-btn:hover {
+    background-color: white;
+    color: rgb(120, 167, 185);
+  }
+  
+  /* Search Bar Styles */
+  .search-bar {
+    flex-grow: 1;
+    max-width: 300px;
+  }
+  
+  .search-bar input {
+    width: 100%;
+    border: 1px solid white;
+    padding: 5px 15px;
+    color: rgb(120, 167, 185);
+  }
+  
+  .btn-search {
+    background-color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgb(120, 167, 185);
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+  }
+  
+  .btn-search:hover {
+    background-color: rgba(255, 255, 255, 0.8);
+    transform: scale(1.1);
+  }
+  

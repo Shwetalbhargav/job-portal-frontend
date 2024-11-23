@@ -2,6 +2,7 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
+
 }
 
 .dashboard-layout {
@@ -9,6 +10,9 @@ body {
     grid-template-rows: auto 1fr auto; /* Header, main content, footer */
     grid-template-columns: 300px 1fr; /* Sidebar, main content */
     height: 100vh;
+    background-Image: "url('/LandingPage.png')";
+    background-Size: "cover";
+    background-Position: "center";
     grid-template-areas:
         "header header"
         "sidebar main"
@@ -134,16 +138,19 @@ header {
   flex-wrap: wrap;
   gap: 20px;
   padding: 20px;
+  
 }
 
 .content-card {
-  background: #fff;
+    background: linear-gradient(120deg, #92d8e3, #28ccd8, #08cde3); /* Vibrant gradient matching image */
+    color: #FFFFFF !important;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3); /* Enhance the shadow */
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
   border-radius: 8px;
   padding: 20px;
   text-align: center;
   width: 300px;
-  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-  transition: transform 0.2s ease;
+ 
 }
 
 .content-card:hover {

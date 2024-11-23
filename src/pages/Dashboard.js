@@ -16,20 +16,19 @@ export const Dashboard = () => {
     };
 
     return (
-        <div className="dashboard-layout">
-            {/* Header */}
-            <header>
-                <div className="h3 mb-0">JobPortal</div>
-                <nav className="d-flex gap-3 align-items-center">
-                    <a href="#home" className="text-white text-decoration-none">Home</a>
-                    <Link to="/LandingPage" className="text-white text-decoration-none">Home</Link>
-                    <Link to="/dashboard" className="text-white text-decoration-none">Dashboard</Link>
-                    <a href="#contact" className="text-white text-decoration-none">Contact</a>
-                    <button className="btn btn-outline-light">Get Started</button>
-                </nav>
-            </header>
+        <div className="dashboard-layout"
+        style={{
+            backgroundColor: "rgb(120, 167, 185)",       
+             
+          }}
+        >
+            
             {/* Sidebar */}
-            <div className={`dashboard-container ${isCollapsed ? 'collapsed' : ''}`}>
+            <div className={`dashboard-container ${isCollapsed ? 'collapsed' : ''}`}
+            style={{
+                backgroundColor: "rgb(120, 167, 185)",       
+                 
+              }}>
             <button className="collapse-btn" onClick={() => setIsCollapsed(!isCollapsed)}>
                 <span className="menu-icon">☰</span>
             </button>
@@ -144,7 +143,7 @@ export const Dashboard = () => {
         </div>
             
             {/* Main Content */}
-            <div className="main-content d-flex flex-wrap justify-content-around py-4">
+            <div className="main-content d-flex flex-wrap justify-content-around py-4" >
   <Link to="/job-management" className="card-link">
     <div className="content-card shadow-sm">
       <FaBriefcase className="card-icon" />
@@ -188,11 +187,7 @@ export const Dashboard = () => {
     </div>
   </Link>
 </div>
-            {/* Footer */}
-            <footer className="footer">
-                <p>Privacy Policy | Terms of Service | Contact</p>
-                <div className="social-icons">🔗🔗🔗</div>
-            </footer>
+            
         </div>
     );
 };
